@@ -1,0 +1,36 @@
+.hero { display:grid;grid-template-columns:2fr 1fr;border-bottom:1px solid var(--line);min-height:clamp(440px,65svh,680px); }
+.title { display:flex;flex-direction:column;justify-content:space-between;padding:32px 24px;min-width:0; }
+.title .eyebrow { margin-bottom:48px; }
+.title h1 { margin:0;font-size:clamp(100px,19vw,300px);font-weight:700;letter-spacing:-.105em;line-height:.8;animation:work-title-in .9s var(--ease-out) both; }
+.visual { position:relative;isolation:isolate;overflow:hidden;min-width:0;background:var(--surface);border-left:1px solid var(--line); }
+.badge { position:absolute;width:78%;height:auto;left:11%;top:6%;animation:record-spin 24s linear infinite; }
+.disc { fill:var(--accent); }
+.groove { fill:none;stroke:var(--accent-ink);stroke-width:.8;opacity:.35; }
+.badge text { fill:var(--accent-ink);font:700 13px var(--mono);letter-spacing:2px; }
+.code { fill:none;stroke:var(--accent-ink);stroke-width:2; }
+.portraitEntrance { position:absolute;inset:8% -12% 0;pointer-events:none; }
+.portraitMotion { position:absolute;inset:0;transition:transform .9s var(--ease-out); }
+.portraitMotion img { object-fit:contain;object-position:center bottom; }
+.motionToggle { position:absolute;z-index:3;top:12px;right:12px;display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:14px var(--mono); }
+.motionToggle:is(:hover,:focus-visible) { background:var(--accent);color:var(--accent-ink); }
+.visual[data-paused="true"] .badge,.visual:focus-within .badge { animation-play-state:paused; }
+@media(hover:hover) and (pointer:fine) {
+ .visual:hover .badge { animation-play-state:paused; }
+ .visual:hover .portraitMotion { transform:translateX(-3%); }
+}
+@keyframes record-spin { to { transform:rotate(360deg); } }
+@keyframes work-title-in { from { opacity:0;transform:translateY(35px); } to { opacity:1;transform:translateY(0); } }
+@media(max-width:760px) {
+ .hero { grid-template-columns:1fr;min-height:0; }
+ .title { min-height:190px;padding:26px 12px 18px;gap:20px; }
+ .title h1 { font-size:25vw; }
+ .visual { border-left:0;border-top:1px solid var(--line);height:clamp(280px,76vw,420px); }
+ .badge { width:66%;left:17%; }
+ .portraitEntrance { inset:8% -6% 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .title h1,.badge { animation:none; }
+ .portraitMotion { transition:none; }
+ .visual:hover .portraitMotion { transform:none; }
+ .motionToggle { display:none; }
+}
