@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <title>Sachin.</title>
-  <rect width="64" height="64" rx="5" fill="#111a17"/>
-  <rect x="2" y="2" width="60" height="60" rx="3" fill="none" stroke="#f2f0e8" stroke-opacity=".23" stroke-width="2"/>
-  <path d="M45 17.5H28.5c-7.5 0-12 3.8-12 9.5s4.8 8.8 12.8 8.8h5.5c8.2 0 12.7 3 12.7 9s-4.9 9.7-12.7 9.7H16.5" fill="none" stroke="#f2f0e8" stroke-width="8.5" stroke-linecap="square" stroke-linejoin="round"/>
-  <circle cx="52" cy="52" r="4.5" fill="#c7ef65"/>
+  <title>Sachin — s dot monogram</title>
+  <rect width="64" height="64" rx="13" fill="#c7ef65"/>
+  <path fill="#111a17" d="M47 15H27c-11 0-18 5-18 14 0 8 6 12 17 12h8c4 0 6 1 6 4s-2 4-6 4H12v9h22c11 0 18-5 18-14 0-8-6-12-17-12h-8c-4 0-6-1-6-4s2-4 6-4h20z"/>
+  <circle cx="54" cy="54" r="5" fill="#111a17"/>
 </svg>

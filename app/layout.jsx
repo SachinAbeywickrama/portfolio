@@ -2,7 +2,7 @@ import "../styles.css";
 import RouteTransition from "../components/RouteTransition";
 
 export const metadata = {
-  metadataBase: new URL("https://sachinabeywickrama.dev"),
+  metadataBase: new URL("https://portfolio-eta-liart-eeei2zz5dy.vercel.app"),
   title: "Sachin Abeywickrama — Software Engineer",
   description: "An interactive portfolio by Sachin Abeywickrama. Try a concurrency experiment and explore work in web applications, enterprise software, IoT, and machine learning.",
   openGraph: { title: "Sachin Abeywickrama — Software Engineer", description: "Software engineer turning complex problems into clear, useful digital products.", type: "website" }
