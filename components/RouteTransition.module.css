@@ -1,8 +1,8 @@
 .transition { position:fixed;z-index:500;inset:0;pointer-events:none;visibility:hidden;clip-path:inset(0 100% 0 0);background:var(--accent);color:var(--accent-ink); }
 .field { position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr); }
-.field span+span { border-left:1px solid #1416133d; }
+.field span+span { border-left:1px solid color-mix(in srgb,var(--accent-ink) 24%,transparent); }
 .signal { position:absolute;left:50%;top:50%;display:flex;align-items:center;gap:14px;transform:translate(-50%,-50%);font:10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase; }
-.signal i { width:10px;height:10px;border-radius:50%;background:var(--accent-ink);box-shadow:0 0 0 8px #1416131f; }
+.signal i { width:10px;height:10px;border-radius:50%;background:var(--accent-ink);box-shadow:0 0 0 8px color-mix(in srgb,var(--accent-ink) 12%,transparent); }
 .signal b { font-weight:500;white-space:nowrap; }
 .transition[data-phase="cover"] { visibility:visible;animation:signal-cover .43s var(--ease-slide) both; }
 .transition[data-phase="wait"] { visibility:visible;clip-path:inset(0); }

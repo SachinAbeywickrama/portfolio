@@ -1,7 +1,7 @@
 .form { min-width:0;border-left:1px solid var(--line); }
 .form label { position:relative;display:block;min-width:0;padding:20px 16px;border-bottom:1px solid var(--line); }
 .form label>span { display:block;font:10px/1.4 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--muted); }
-.form label i { color:var(--accent);font-style:normal; }
+.form label i { color:var(--accent-text);font-style:normal; }
 .form label small { font:inherit;letter-spacing:.08em;opacity:.65; }
 .form input,.form textarea { width:100%;border:0;outline:0;padding:10px 0 0;border-radius:0;background:transparent;color:var(--ink);font-size:18px;caret-color:var(--accent); }
 .form input { min-height:42px; }

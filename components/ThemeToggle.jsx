@@ -7,7 +7,7 @@ export default function ThemeToggle() {
   const timer = useRef(null);
   useEffect(() => () => { clearTimeout(timer.current); delete document.documentElement.dataset.themeTransition; }, []);
   useEffect(() => { setTheme(document.documentElement.dataset.theme || "dark"); }, []);
-  useEffect(() => { document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#141613" : "#f0f0e8"); }, [theme]);
+  useEffect(() => { document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#111a17" : "#f2f1e8"); }, [theme]);
 
   function applyTheme(next) {
     flushSync(() => {

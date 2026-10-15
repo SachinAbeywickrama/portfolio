@@ -4,7 +4,7 @@
 .heroTitle h1 { width:150%;margin:0;font-size:clamp(110px,18.8vw,290px);font-weight:700;line-height:.76;letter-spacing:-.1em;white-space:nowrap;animation:about-title-in 1s var(--ease-out) both; }
 .heroImage { position:relative;min-width:0;border-left:1px solid var(--line);overflow:hidden;background:var(--surface); }
 .heroImage img { object-fit:cover;object-position:57% center;filter:saturate(.64) contrast(1.08) brightness(.72);transition:transform 1.1s var(--ease-out),filter .7s; }
-.heroImage>span { position:absolute;z-index:2;right:14px;bottom:14px;padding:7px 9px;background:#141613c7;color:#f0f0e8;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase; }
+.heroImage>span { position:absolute;z-index:2;right:14px;bottom:14px;padding:7px 9px;background:#111a17c7;color:#f2f0e8;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase; }
 .shell { width:83.333333%;margin-inline:auto;border-inline:1px solid var(--line); }
 .story { display:grid;grid-template-columns:5fr 7fr;border-bottom:1px solid var(--line); }
 .storyAside { min-width:0;padding:36px 16px 24px;border-right:1px solid var(--line); }
@@ -30,7 +30,7 @@
 .toolkit header .eyebrow { margin-bottom:18px; }
 .toolGroup { padding:25px 0;border-top:1px solid var(--line); }
 .toolGroup h3 { display:flex;align-items:center;gap:10px;margin:0 0 20px;font-size:17px;line-height:1.3;text-transform:lowercase; }
-.toolGroup h3>span { width:18px;color:var(--accent);font:12px var(--mono); }
+.toolGroup h3>span { width:18px;color:var(--accent-text);font:12px var(--mono); }
 .toolGroup h3 i { display:block;width:26px;height:1px;background:var(--muted); }
 .toolGroup ul { display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0; }
 .toolGroup li { padding:5px 9px;border:1px solid var(--line);color:var(--muted);font:10px/1.35 var(--mono);letter-spacing:.04em; }

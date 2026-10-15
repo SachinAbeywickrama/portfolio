@@ -23,7 +23,7 @@ export default async function ProjectPage({ params }) {
   const index = projects.findIndex(item => item.slug === slug);
   const next = projects[(index + 1) % projects.length];
   return <><a className="skip-link" href="#main">Skip to content</a><Header />
-    <main id="main" className={styles.page}>
+    <main id="main" className={styles.page} data-project={project.slug}>
       <section className={styles.hero} aria-labelledby="case-title">
         <div className={styles.heroTop}><a href="/work">← Works index</a><span>{project.number} / 03</span></div>
         <Reveal className={styles.heroTitle}><p>{project.type}</p><h1 id="case-title">{project.title}</h1><div><span>{project.year}</span><span>{project.role}</span></div></Reveal>

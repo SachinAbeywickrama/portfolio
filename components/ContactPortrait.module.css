@@ -6,11 +6,11 @@
 .frame:is(:hover,:focus-within) .reveal { opacity:1; }
 .frame::after { content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(circle 154px at var(--light-x) var(--light-y),transparent 0 59%,color-mix(in srgb,var(--accent) 70%,transparent) 60% 60.5%,transparent 61%);opacity:0;transition:opacity .45s; }
 .frame:hover::after { opacity:.8; }
-.signal { position:absolute;z-index:3;right:18px;top:18px;width:56px;height:56px;display:grid;place-items:center;border:1px solid #f0f0e855;border-radius:50%; }
+.signal { position:absolute;z-index:3;right:18px;top:18px;width:56px;height:56px;display:grid;place-items:center;border:1px solid #f2f0e855;border-radius:50%; }
 .signal span { position:absolute;width:5px;height:5px;border-radius:50%;background:var(--accent); }
 .signal span:nth-child(2) { width:22px;height:22px;background:transparent;border:1px solid var(--accent);opacity:.65; }
 .signal span:nth-child(3) { width:38px;height:38px;background:transparent;border:1px solid var(--accent);opacity:.3; }
-.frame figcaption { position:absolute;z-index:4;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:20px;padding:14px 16px;border-top:1px solid #f0f0e840;background:#0c0d0ba6;color:#f0f0e8;font:9px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(8px); }
+.frame figcaption { position:absolute;z-index:4;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:20px;padding:14px 16px;border-top:1px solid #f2f0e840;background:#111a17b8;color:#f2f0e8;font:9px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(8px); }
 @media(max-width:760px) {
  .frame { min-height:0;aspect-ratio:4/4; }
  .frame img { object-position:center 40%; }

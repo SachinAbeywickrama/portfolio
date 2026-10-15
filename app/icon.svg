@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Sachin.</title>
+  <rect width="64" height="64" rx="5" fill="#111a17"/>
+  <rect x="2" y="2" width="60" height="60" rx="3" fill="none" stroke="#f2f0e8" stroke-opacity=".23" stroke-width="2"/>
+  <path d="M45 17.5H28.5c-7.5 0-12 3.8-12 9.5s4.8 8.8 12.8 8.8h5.5c8.2 0 12.7 3 12.7 9s-4.9 9.7-12.7 9.7H16.5" fill="none" stroke="#f2f0e8" stroke-width="8.5" stroke-linecap="square" stroke-linejoin="round"/>
+  <circle cx="52" cy="52" r="4.5" fill="#c7ef65"/>
+</svg>
