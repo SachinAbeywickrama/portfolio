@@ -13,7 +13,6 @@ Open `http://localhost:3000`. Build with `npm run build`, serve with `npm start`
 
 ## Experience
 
-- A brief, skippable wireframe-room entrance plays once per tab session.
 - The header contains a live world-clock strip, a theme toggle, and a slide-down navigation panel.
 - The desktop hero pairs a film with a portrait; mobile stacks the film, portrait, name, and roles.
 - Biography, project selector, services, and contact follow the reference’s bordered grid. On desktop, the biography photograph expands from its side panel to a full-width frame as you scroll; scrolling back reverses it. Mobile and reduced-motion layouts keep the photograph static.
@@ -66,10 +65,16 @@ Images were resized and compressed for the web. The supplied About-page HEIC fil
 
 Both videos are muted and inline, pause when out of view or when the tab is hidden, and have Play/Pause controls. Reduced-motion and data-saving preferences start with posters and require an explicit play request. Phone-sized views request dedicated mobile exports. The hero film’s bottom 88 pixels are cropped to remove the embedded CapCut logo, with no upscaling; higher bitrates reduce additional compression but cannot restore detail absent from the source. The on-page color treatment slightly deepens contrast and reduces saturation. Browsers may also restrict autoplay; the play controls remain available.
 
-Reduced motion disables the intro, entrance animations, marquees, slideshow autoplay, expanding rows, and transitions. Touch layouts keep content visible without requiring hover; vertical scrolling and pinch zoom remain native. Both moving text strips have pause controls. Navigation supports Escape and trapped keyboard focus, restores focus on close, and temporarily makes the underlying content inert. Content remains readable without JavaScript.
+Reduced motion disables entrance animations, marquees, slideshow autoplay, expanding rows, and transitions. Touch layouts keep content visible without requiring hover; vertical scrolling and pinch zoom remain native. Both moving text strips have pause controls. Navigation supports Escape and trapped keyboard focus, restores focus on close, and temporarily makes the underlying content inert. Content remains readable without JavaScript.
 
 ## Contact and experiment
 
-Copy `.env.example` to `.env.local`, add your Resend API key, and set `CONTACT_FROM_EMAIL` to an address on your verified sending domain. Apply these environment variables to your hosting provider. A direct email link is available alongside the form. Browser verification intercepts form submissions; it does not send email.
+The contact form sends through Formspree using the public form ID `xvkzdavg` supplied by the site owner. It needs no custom sending domain or Vercel environment variable. Confirm that the form's target email is `sachinsuranjana@gmail.com` and that the address is verified in Formspree. After deployment, submit a message through the site and check the Formspree submissions dashboard and Gmail inbox, including Spam. A direct email link remains available beside the form.
+
+To change forms without changing code, set `FORMSPREE_FORM_ID` in Vercel Project Settings → Environment Variables and redeploy. For local testing, set it in `.env.local`. Setting it to an empty string disables Formspree and lets a complete Resend configuration take over.
+
+If you later own a custom sending domain, the route can also use Resend's server-side Email API. Verify the domain in Resend, then set `FORMSPREE_FORM_ID` to an empty string and set `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` (for example, `Sachin Portfolio <hello@your-verified-domain.com>`). The Vercel deployment URL cannot serve as your Resend sender domain. Never prefix server-only variables with `NEXT_PUBLIC_` or commit API keys.
+
+Tests mock provider requests and never send real email. See the [Formspree form guide](https://help.formspree.io/articles/troubleshooting/phasing-out-legacy-forms-email-urls), [Resend domain guide](https://resend.com/docs/dashboard/domains/introduction), and [Vercel environment-variable guide](https://vercel.com/docs/environment-variables).
 
 `lib/concurrency.mjs` performs deterministic read/write scheduling for two workers incrementing a shared counter. The unsafe design loses an update; mutual exclusion preserves both. This is a browser illustration, not Java-thread execution.

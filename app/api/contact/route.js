@@ -1,6 +1,8 @@
 const attempts = new Map();
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_ATTEMPTS = 5;
+// Formspree form IDs are public identifiers used in form action URLs.
+const DEFAULT_FORMSPREE_FORM_ID = "xvkzdavg";
 
 function clean(value, limit) {
   return typeof value === "string" ? value.trim().slice(0, limit) : "";
@@ -25,6 +27,9 @@ export async function POST(request) {
   let payload;
   try { payload = await request.json(); }
   catch { return Response.json({ error: "Invalid request." }, { status: 400 }); }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return Response.json({ error: "Invalid request." }, { status: 400 });
+  }
 
   if (clean(payload.website, 200)) return Response.json({ ok: true });
 
@@ -36,22 +41,47 @@ export async function POST(request) {
     return Response.json({ error: "Please check all three fields." }, { status: 400 });
   }
 
-  if (!process.env.RESEND_API_KEY) {
-    console.error("Contact form: RESEND_API_KEY is not configured.");
+  const formspreeId = process.env.FORMSPREE_FORM_ID === undefined
+    ? DEFAULT_FORMSPREE_FORM_ID
+    : process.env.FORMSPREE_FORM_ID.trim();
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const to = process.env.CONTACT_TO_EMAIL?.trim();
+  const from = process.env.CONTACT_FROM_EMAIL?.trim();
+  const useFormspree = Boolean(formspreeId && /^[a-zA-Z0-9]+$/.test(formspreeId));
+  if (!useFormspree && (!apiKey || !to || !from)) {
+    console.error("Contact form: Formspree form ID or Resend settings are not configured.");
     return Response.json({ error: "Email delivery is not configured yet." }, { status: 503 });
+  }
+
+  if (useFormspree) {
+    try {
+      const formspreeResponse = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
+      if (formspreeResponse.status === 429) {
+        return Response.json({ error: "Too many attempts. Please try again later." }, { status: 429 });
+      }
+      if (!formspreeResponse.ok) {
+        console.error("Contact form: Formspree rejected the request.", formspreeResponse.status);
+        return Response.json({ error: "Delivery failed. Please use the email link." }, { status: 502 });
+      }
+      return Response.json({ ok: true });
+    } catch (error) {
+      console.error("Contact form: delivery request failed.", error);
+      return Response.json({ error: "Delivery failed. Please use the email link." }, { status: 502 });
+    }
   }
 
   const safeName = escapeHtml(name);
   const safeEmail = escapeHtml(email);
   const safePhone = escapeHtml(phone);
   const safeMessage = escapeHtml(message).replace(/\n/g, "<br>\n");
-  const to = process.env.CONTACT_TO_EMAIL || "sachinsuranjana@gmail.com";
-  const from = process.env.CONTACT_FROM_EMAIL || "Sachin Portfolio <onboarding@resend.dev>";
-
   try {
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
-      headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         from,
         to: [to],
@@ -62,7 +92,7 @@ export async function POST(request) {
       }),
     });
     const result = await resendResponse.json().catch(() => ({}));
-    if (!resendResponse.ok) {
+    if (!resendResponse.ok || !result.id) {
       console.error("Contact form: Resend rejected the request.", result);
       return Response.json({ error: "Delivery failed. Please use the email link." }, { status: 502 });
     }
