@@ -146,6 +146,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
 .footer-elsewhere,.footer-colophon { padding:56px 16px;min-height:288px; }
 .footer-elsewhere .eyebrow,.footer-colophon .eyebrow { margin-bottom:64px;color:inherit;opacity:.8; }
 .footer-elsewhere a { display:flex;align-items:center;gap:16px;min-height:32px;font-size:20px;letter-spacing:.04em;text-transform:uppercase;width:max-content; }
+.footer-elsewhere a>svg { flex:none; }
 .footer-colophon { border-left:1px solid color-mix(in srgb,var(--bg) 35%,transparent);display:flex;flex-direction:column; }
 .footer-colophon>p:last-child { margin:auto 0 0;font:10px/1.8 var(--mono);text-transform:uppercase;letter-spacing:.12em; }
 .footer-wordmark { display:flex;align-items:flex-end;justify-content:center;min-height:clamp(270px,23vw,390px);padding:12px clamp(12px,2vw,32px);border-top:1px solid color-mix(in srgb,var(--bg) 35%,transparent);overflow:hidden;font-size:min(31vw,650px);font-weight:700;letter-spacing:-.14em;white-space:nowrap; }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import LinkIcon from "./LinkIcon";
 import styles from "./Header.module.css";
 
 const links = [["/about", "about"], ["/work", "works"], ["/contact", "contact"]];
@@ -85,7 +86,7 @@ export default function Header() {
     {open && <div className={styles.backdrop} onClick={close} aria-hidden="true" />}
     <div ref={drawerRef} id="site-menu" className={`${styles.drawer} ${open ? styles.drawerOpen : styles.drawerClosing}`} hidden={!present} inert={!open || undefined} aria-hidden={!open || undefined} role="dialog" aria-modal={open || undefined} aria-label="Site navigation">
       <nav aria-label="Main navigation">{links.map(([href,label],index) => <a href={href} key={href} onClick={close} style={{ "--menu-index": index }}><span className={styles.index}>0{index + 1}</span><span className={styles.label}><span>{label}</span><span aria-hidden="true">{label}</span></span></a>)}</nav>
-      <div className={styles.drawerLinks}><a href="https://github.com/SachinAbeywickrama" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.instagram.com/sachin_abeywickrama/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="/lab" onClick={close}>Playground ↗</a><a href="/Sachin-Abeywickrama-CV.pdf" target="_blank" rel="noopener">Résumé ↗</a></div>
+      <div className={styles.drawerLinks}><a href="https://github.com/SachinAbeywickrama" target="_blank" rel="noopener"><LinkIcon name="GitHub" />GitHub ↗</a><a href="https://www.instagram.com/sachin_abeywickrama/" target="_blank" rel="noopener noreferrer"><LinkIcon name="Instagram" />Instagram ↗</a><a href="/lab" onClick={close}><LinkIcon name="Playground" />Playground ↗</a><a href="/Sachin-Abeywickrama-CV.pdf" target="_blank" rel="noopener"><LinkIcon name="Résumé" />Résumé ↗</a></div>
     </div>
   </header>;
 }

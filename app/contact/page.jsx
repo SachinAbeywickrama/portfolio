@@ -3,6 +3,7 @@ import ContactForm from "../../components/ContactForm";
 import ContactPortrait from "../../components/ContactPortrait";
 import SiteFooter from "../../components/SiteFooter";
 import Reveal from "../../components/Reveal";
+import LinkIcon from "../../components/LinkIcon";
 import styles from "./ContactPage.module.css";
 
 export const metadata = {
@@ -37,7 +38,7 @@ export default function ContactPage() {
           <div className={styles.contactLinks}>
             <a className={styles.email} href="mailto:sachinsuranjana@gmail.com"><span aria-hidden="true">✉</span><span>sachinsuranjana@gmail.com</span></a>
             <span className={styles.availability}><i /> Available for opportunities</span>
-            <nav aria-label="Social and portfolio links">{links.map(([label, href]) => <a href={href} key={label} target={href.startsWith("http") || href.endsWith(".pdf") ? "_blank" : undefined} rel={href.startsWith("http") || href.endsWith(".pdf") ? "noopener" : undefined}><span>{label}</span><span aria-hidden="true">↗</span></a>)}</nav>
+            <nav aria-label="Social and portfolio links">{links.map(([label, href]) => <a href={href} key={label} target={href.startsWith("http") || href.endsWith(".pdf") ? "_blank" : undefined} rel={href.startsWith("http") || href.endsWith(".pdf") ? "noopener" : undefined}><span className={styles.linkLabel}><LinkIcon name={label} />{label}</span><span aria-hidden="true">↗</span></a>)}</nav>
           </div>
         </div>
         <ContactForm />

@@ -16,6 +16,8 @@
 .availability i { width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 12%,transparent); }
 .contactLinks nav { display:flex;flex-direction:column;align-items:flex-start; }
 .contactLinks nav a { display:flex;align-items:center;justify-content:space-between;gap:26px;min-width:150px;min-height:36px;font:10px/1.4 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--muted); }
+.linkLabel { display:inline-flex;align-items:center;gap:10px;white-space:nowrap; }
+.linkLabel svg { flex:none; }
 .contactLinks nav a span:last-child { transition:transform .35s var(--ease-out); }
 .contactLinks nav a:is(:hover,:focus-visible) { color:var(--ink); }
 .contactLinks nav a:is(:hover,:focus-visible) span:last-child { transform:translate(3px,-3px); }
