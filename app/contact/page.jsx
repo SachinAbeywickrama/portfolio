@@ -12,6 +12,7 @@ export const metadata = {
 
 const links = [
   ["GitHub", "https://github.com/SachinAbeywickrama"],
+  ["Instagram", "https://www.instagram.com/sachin_abeywickrama/"],
   ["Playground", "/lab"],
   ["Résumé", "/Sachin-Abeywickrama-CV.pdf"]
 ];
