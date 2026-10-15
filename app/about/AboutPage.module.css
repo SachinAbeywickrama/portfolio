@@ -75,7 +75,7 @@
  .storyAside h2,.toolkit h2 { font-size:48px; }
  .storyFigure { margin-top:28px; }
  .storyFigure figure { aspect-ratio:4/3; }
- .statement { min-height:210px;padding:54px 12px;font-size:42px; }
+ .statement { display:block;min-height:210px;padding:54px 12px;font-size:42px; }
  .biography { padding:50px 12px; }
  .biography p { font-size:18px;line-height:1.72; }
  .toolkit { padding:58px 12px 28px; }

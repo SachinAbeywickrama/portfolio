@@ -4,7 +4,6 @@ import DeveloperFeature from "./DeveloperFeature";
 import WorkCarousel from "./WorkCarousel";
 import Reveal from "./Reveal";
 import WorkMarquee from "./WorkMarquee";
-import RoomIntro from "./RoomIntro";
 import ContactTeaser from "./ContactTeaser";
 import SiteFooter from "./SiteFooter";
 import ServiceVisual from "./ServiceVisual";
@@ -16,7 +15,7 @@ const services = [
 ];
 
 export default function Portfolio() {
-  return <><RoomIntro /><main id="main">
+  return <><main id="main">
     <StudioHero />
     <section className="intro-section page-shell" id="about" aria-labelledby="about-title">
       <Reveal><div className="section-title"><span>the</span><h2 id="about-title">developer.</h2></div></Reveal>

@@ -20,7 +20,7 @@
 .brief span,.sectionTitle>span { display:block;margin-bottom:18px;font:9px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--project-accent); }
 .brief p { margin:0;color:var(--muted);font-size:15px;line-height:1.65; }
 .story,.system,.results,.aquaEvidence { display:grid;grid-template-columns:1fr 2fr;border-bottom:1px solid var(--line); }
-.sectionTitle { padding:72px 16px; }
+.sectionTitle { min-width:0;padding:72px 16px; }
 .sectionTitle>div>p { margin-bottom:16px; }
 .sectionTitle h2 { margin:0;font-size:clamp(46px,5.8vw,86px);line-height:.9;letter-spacing:-.07em; }
 .prose,.resultBody,.flow { padding:72px 24px;border-left:1px solid var(--line); }
@@ -112,7 +112,7 @@
  .brief>div+div,.brief>div:last-child { grid-column:auto;border-left:0;border-top:1px solid var(--line); }
  .brief>div { padding:24px 12px; }
  .sectionTitle { padding:54px 12px 24px; }
- .sectionTitle h2 { font-size:52px; }
+ .sectionTitle h2 { font-size:clamp(38px,15.5vw,52px);overflow-wrap:anywhere; }
  .prose,.resultBody,.flow { padding:38px 12px 54px; }
  .prose>p { font-size:18px; }
  .metrics { grid-template-columns:1fr 1fr; }
