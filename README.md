@@ -48,7 +48,6 @@ The supplied MOV and three JPEGs are preserved in `output/media-originals/`. Pub
 | `sachin-film-clean-poster.jpg` | Matching logo-free still for initial loading and motion/data-saving preferences |
 | `sachin-car.webp` | Hero portrait and contact image |
 | `sachin-cinematic.webp` | Wide biography photograph |
-| `sachin-standing.webp` | About-page portrait |
 | `sachin-about-portrait.jpg` | Responsive portrait used across the redesigned About page |
 | `sachin-about-story.jpg` | Coastal hammock photograph used in the “This is me” section |
 | `sachin-work-selfie-cutout.webp` | Transparent monochrome selfie in the work-page header |
