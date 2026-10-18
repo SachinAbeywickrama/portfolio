@@ -21,7 +21,7 @@ export default function AquaAdaptEvidence() {
 
     <div className={styles.aquaBody}>
       <Reveal className={styles.prototypeGrid}>
-        <figure className={styles.prototypeFilm}>
+        <figure className={styles.prototypeFilm} id="prototype-film">
           <video controls muted loop playsInline preload="metadata" poster="/media/aquaadapt/prototype-poster.jpg" aria-label="AquaAdapt pond sensor prototype demonstration">
             <source src="/media/aquaadapt/prototype-film.mp4" type="video/mp4" />
           </video>
@@ -35,7 +35,7 @@ export default function AquaAdaptEvidence() {
         </div>
       </Reveal>
 
-      <Reveal className={styles.dashboardBlock}>
+      <Reveal className={styles.dashboardBlock} id="dashboard-evidence">
         <div className={styles.dashboardIntro}><p className={styles.kicker}>The operator view</p><h3>One interface for readings, weather, forecasts, and decisions.</h3><p>The Next.js dashboard exposes the full workflow instead of showing a single prediction: input quality, recent history, weather alignment, model choice, backtesting, monitoring, retraining, alerts, and explanations.</p></div>
         <figure><Image src="/media/aquaadapt/dashboard-overview.jpg" alt="AquaAdapt dashboard with water-quality KPIs, validation status, and forecasting controls" width={1305} height={892} sizes="(max-width: 980px) 100vw, 56vw" unoptimized /><figcaption>Dashboard overview / thesis prototype</figcaption></figure>
         <figure><Image src="/media/aquaadapt/forecast-interface.jpg" alt="AquaAdapt weather-aware forecast interface with recent history and six-hour forecast charts" width={1305} height={893} sizes="(max-width: 980px) 100vw, 56vw" unoptimized /><figcaption>Weather-aware forecast / six-hour horizon</figcaption></figure>

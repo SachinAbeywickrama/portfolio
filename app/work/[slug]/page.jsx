@@ -30,8 +30,21 @@ export default async function ProjectPage({ params }) {
         <Reveal className={styles.heroLead}><p>{project.intro}</p><ul aria-label="Technologies">{project.stack.map(item => <li key={item}>{item}</li>)}</ul></Reveal>
       </section>
 
+      <section className={styles.proof} aria-labelledby="proof-title">
+        <div className={styles.proofIntro}><span>Start with the work</span><h2 id="proof-title">{project.proofTitle}</h2></div>
+        <div className={styles.proofGrid}>{project.proof.map(item => {
+          const content = <><span>{item.label}</span><strong>{item.detail}</strong>{item.href && <b aria-hidden="true">↗</b>}</>;
+          return item.href
+            ? <a href={item.href} key={item.label} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}>{content}</a>
+            : <div key={item.label}>{content}</div>;
+        })}</div>
+      </section>
+
       <Reveal className={styles.cover}>
-        <figure><Image src={project.cover} alt={`Concept artwork for ${project.title}`} fill sizes="(max-width: 760px) 100vw, 84vw" priority /><figcaption>Project visual / {project.year}</figcaption></figure>
+        <figure className={project.caseCover ? styles.realCover : undefined}>
+          {project.caseCoverMobile ? <picture><source media="(max-width: 760px)" srcSet={project.caseCoverMobile} /><Image src={project.caseCover} alt={project.caseCoverAlt} fill sizes="(max-width: 760px) 100vw, 84vw" /></picture> : <Image src={project.cover} alt={`Concept artwork for ${project.title}`} fill sizes="(max-width: 760px) 100vw, 84vw" priority />}
+          <figcaption>{project.visualCaption}</figcaption>
+        </figure>
       </Reveal>
 
       <section className={styles.brief} aria-label="Project at a glance">

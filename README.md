@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`. Build with `npm run build`, serve with `npm start`, and run the concurrency-engine checks with `npm test`.
+Open `http://localhost:3000`. Build with `npm run build`, serve with `npm start`, and run the automated checks with `npm test`. Run `npm run check:responsive` with Chrome or Chromium installed to check all eight routes at 21 phone, tablet, breakpoint, and desktop widths; set `CHROME_BIN` if the browser is in a nonstandard location. Sample screenshots are saved under ignored `output/responsive-check/`.
 
 ## Experience
 
@@ -19,7 +19,7 @@ Open `http://localhost:3000`. Build with `npm run build`, serve with `npm start`
 - Projects use directional slide transitions. Browse with thumbnails, Previous/Next, arrow keys, Home/End, or horizontal touch swipes. Manual selections are announced to screen readers.
 - The project slideshow advances every 6.5 seconds while visible, with a Play/Pause control. Hover, keyboard focus, leaving the viewport, and a hidden tab pause it; manual selection stops autoplay.
 - Image wipes, heading and letter reveals, rolling links, moving arrows, and a pausable work strip provide motion.
-- The work archive combines a large featured case study with live text search, category filters, responsive project cards, image zooms, and arrow reveals.
+- The work archive combines a large featured case study with live text search, category filters, responsive project cards, image zooms, and arrow reveals. Case studies lead with inspectable evidence or a clear confidentiality note; the Engineering Experiments page shows the real concurrency lab instead of concept artwork.
 - A responsive coastal-train film fills the shared space between each page’s closing content and the footer navigation.
 - The About-page experience portrait uses a pausable engineering-scan animation with pointer depth and a static reduced-motion fallback.
 - On desktop, service rows expand with a zoom-out image treatment; the selected-work portrait drifts on hover. Menu links enter in sequence and the drawer animates on close. Footer links invert their colors and roll their labels.
@@ -58,11 +58,11 @@ The supplied MOV and three JPEGs are preserved in `output/media-originals/`. Pub
 
 The original MOV and earlier exports remain untouched. `IMG_4974.MOV` also remains unchanged in Downloads; the site uses only its optimized H.264 exports and poster.
 
-Images were resized and compressed for the web. The supplied About-page HEIC files are preserved as `output/media-originals/sachin-about-original.heic` and `output/media-originals/sachin-about-story-original.heic`. The standing portrait’s background was removed with the built-in imagegen tool; its original edit and exact prompt are in `output/imagegen/`. The earlier generated coastal study remains an unused alternative there. Project covers in `public/images/` are labeled concept artwork, not project screenshots.
+Images were resized and compressed for the web. The supplied About-page HEIC files are preserved as `output/media-originals/sachin-about-original.heic` and `output/media-originals/sachin-about-story-original.heic`. The standing portrait’s background was removed with the built-in imagegen tool; its original edit and exact prompt are in `output/imagegen/`. The earlier generated coastal study remains an unused alternative there. Project covers in `public/images/` are labeled concept artwork, not project screenshots. The Engineering Experiments case study uses real desktop and mobile captures of its live concurrency lab.
 
 ## Motion and accessibility
 
-Both videos are muted and inline, pause when out of view or when the tab is hidden, and have Play/Pause controls. Reduced-motion and data-saving preferences start with posters and require an explicit play request. Phone-sized views request dedicated mobile exports. The hero film’s bottom 88 pixels are cropped to remove the embedded CapCut logo, with no upscaling; higher bitrates reduce additional compression but cannot restore detail absent from the source. The on-page color treatment slightly deepens contrast and reduces saturation. Browsers may also restrict autoplay; the play controls remain available.
+Both videos are muted and inline, pause when out of view or when the tab is hidden, and have Play/Pause controls. The hero starts from its poster on screens narrower than 1024 px and on touch devices; its video URL is attached only after Play is selected. Compact screens use the smaller mobile export. Reduced-motion and data-saving preferences also require an explicit play request. The hero film’s bottom 88 pixels are cropped to remove the embedded CapCut logo, with no upscaling; higher bitrates reduce additional compression but cannot restore detail absent from the source. The on-page color treatment slightly deepens contrast and reduces saturation. Browsers may also restrict autoplay; the play controls remain available.
 
 Reduced motion disables entrance animations, marquees, slideshow autoplay, expanding rows, and transitions. Touch layouts keep content visible without requiring hover; vertical scrolling and pinch zoom remain native. Both moving text strips have pause controls. Navigation supports Escape and trapped keyboard focus, restores focus on close, and temporarily makes the underlying content inert. Content remains readable without JavaScript.
 

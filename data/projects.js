@@ -4,6 +4,13 @@ export const projects = [
     number: "01",
     title: "AquaAdapt",
     cover: "/images/aqua-concept.webp",
+    visualCaption: "Concept artwork · prototype captures below",
+    proofTitle: "Evidence you can inspect.",
+    proof: [
+      { label: "Field prototype", detail: "Watch the sensor demonstration", href: "#prototype-film" },
+      { label: "Product interface", detail: "See dashboard and forecast captures", href: "#dashboard-evidence" },
+      { label: "Public source", detail: "Inspect the AquaAdapt repository", href: "https://github.com/SachinAbeywickrama/AquaAdapt" }
+    ],
     summary: "Water-quality monitoring and forecasting for aquaculture using IoT sensing and machine learning.",
     contributionSummary: "Designed the research and built the preprocessing, training, evaluation, and explainability pipeline.",
     subtitle: "Intelligent water-quality monitoring and decision support for aquaculture",
@@ -28,6 +35,12 @@ export const projects = [
     number: "02",
     title: "Enterprise Banking Systems",
     cover: "/images/enterprise-concept.webp",
+    visualCaption: "Concept artwork · internal interfaces confidential",
+    proofTitle: "What I can share.",
+    proof: [
+      { label: "What I can share", detail: "My role, stack, integration work, and delivery process", href: "#contribution-title" },
+      { label: "What stays private", detail: "Bank screens, source code, and internal outcomes are not published" }
+    ],
     summary: "Internal asset-tracking and intranet applications developed with the SDB Bank engineering team.",
     contributionSummary: "Built frontend components, integrated REST services, and supported testing and deployment.",
     subtitle: "Internal applications developed during my SDB Bank internship",
@@ -51,6 +64,15 @@ export const projects = [
     number: "03",
     title: "Engineering Experiments",
     cover: "/images/experiments-concept.webp",
+    caseCover: "/media/engineering-concurrency-console-desktop.png",
+    caseCoverMobile: "/media/engineering-concurrency-console-mobile.png",
+    caseCoverAlt: "Live concurrency lab showing two workers, a shared counter, and experiment controls",
+    visualCaption: "Live concurrency lab · browser simulation",
+    proofTitle: "Try the work.",
+    proof: [
+      { label: "Interactive demo", detail: "Run the shared-counter concurrency lab", href: "/lab" },
+      { label: "Public code", detail: "Browse the engineering repositories", href: "https://github.com/SachinAbeywickrama?tab=repositories" }
+    ],
     summary: "Practical explorations of Java concurrency, formal specification, gesture ML, and application design.",
     contributionSummary: "Independently implemented focused projects to investigate engineering concepts and trade-offs.",
     subtitle: "Concurrency, formal methods, gesture ML, and application design",
