@@ -7,12 +7,14 @@ import styles from "./WorkArchive.module.css";
 
 const projectCategories = {
   aquaadapt: ["Research", "Machine Learning", "IoT"],
+  rolenest: ["Web", "Full-stack", "Product"],
+  ceyluxe: ["Web", "Design"],
   "enterprise-banking": ["Enterprise", "Web"],
   "engineering-experiments": ["Experiments", "Java", "Python"]
 };
 
 function ProjectImage({ project, priority = false, sizes }) {
-  return <Image src={project.cover} alt={`Concept artwork for ${project.title}`} fill sizes={sizes} priority={priority} />;
+  return <Image src={project.cover} alt={project.coverAlt ?? `Concept artwork for ${project.title}`} fill sizes={sizes} priority={priority} />;
 }
 
 function ProjectCard({ project, index }) {
@@ -36,7 +38,7 @@ export default function WorkArchive({ projects }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("All");
   const featured = projects[0];
-  const filters = ["All", "Research", "Enterprise", "Experiments"];
+  const filters = ["All", "Research", "Web", "Enterprise", "Experiments"];
   const visibleProjects = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return projects.filter(project => {

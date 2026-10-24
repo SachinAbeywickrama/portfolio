@@ -5,10 +5,10 @@ import net from "node:net";
 import os from "node:os";
 import path from "node:path";
 
-const routes = process.argv[3] ? [process.argv[3]] : ["/", "/about", "/work", "/work/aquaadapt", "/work/enterprise-banking", "/work/engineering-experiments", "/contact", "/lab"];
+const routes = process.argv[3] ? [process.argv[3]] : ["/", "/about", "/work", "/work/aquaadapt", "/work/rolenest", "/work/ceyluxe", "/work/enterprise-banking", "/work/engineering-experiments", "/contact", "/lab"];
 const widths = process.argv[2] ? [Number(process.argv[2])] : [320, 360, 375, 390, 393, 414, 430, 600, 760, 761, 768, 834, 980, 981, 1024, 1199, 1200, 1280, 1440, 1920, 2560];
 const screenshotWidths = new Set([390, 768, 1440]);
-const screenshotRoutes = new Set(["/", "/work/aquaadapt", "/work/enterprise-banking", "/work/engineering-experiments", "/lab"]);
+const screenshotRoutes = new Set(["/", "/work", "/work/aquaadapt", "/work/rolenest", "/work/ceyluxe", "/work/enterprise-banking", "/work/engineering-experiments", "/lab"]);
 const chrome = [
   process.env.CHROME_BIN,
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -113,7 +113,7 @@ try {
       }
       if (screenshotWidths.has(width) && screenshotRoutes.has(route)) {
         if (route !== "/") {
-          const selector = route === "/lab" ? "[class*=console]" : route === "/work/engineering-experiments" ? "figure[class*=realCover]" : "section[class*=proof]";
+          const selector = route === "/lab" ? "[class*=console]" : route === "/work" ? "section[class*=archive]" : route === "/work/engineering-experiments" ? "figure[class*=realCover]" : ["/work/rolenest", "/work/ceyluxe"].includes(route) ? "main .reveal[class*=cover]" : "section[class*=proof]";
           await client.send("Runtime.evaluate", { expression: `document.querySelector(${JSON.stringify(selector)})?.scrollIntoView({block:"start",behavior:"instant"})` });
           await sleep(100);
         }

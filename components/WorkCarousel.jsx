@@ -88,7 +88,7 @@ export default function WorkCarousel({ items = [] }) {
       </div>
       <a className={styles.artwork} href={item.href ?? `/work/${item.slug}`} aria-label={`Explore ${item.title}`}>
         <Image src={item.cover} fill sizes="(max-width: 760px) 140vw, 80vw" alt="" className={styles.artworkImage} />
-        <span className={styles.artworkCaption}>Concept artwork</span>
+        <span className={styles.artworkCaption}>{item.coverLabel ?? "Concept artwork"}</span>
       </a>
     </article>;
   }

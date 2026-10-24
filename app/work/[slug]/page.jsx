@@ -25,7 +25,7 @@ export default async function ProjectPage({ params }) {
   return <><a className="skip-link" href="#main">Skip to content</a><Header />
     <main id="main" className={styles.page} data-project={project.slug}>
       <section className={styles.hero} aria-labelledby="case-title">
-        <div className={styles.heroTop}><a href="/work">← Works index</a><span>{project.number} / 03</span></div>
+        <div className={styles.heroTop}><a href="/work">← Works index</a><span>{project.number} / {String(projects.length).padStart(2, "0")}</span></div>
         <Reveal className={styles.heroTitle}><p>{project.type}</p><h1 id="case-title">{project.title}</h1><div><span>{project.year}</span><span>{project.role}</span></div></Reveal>
         <Reveal className={styles.heroLead}><p>{project.intro}</p><ul aria-label="Technologies">{project.stack.map(item => <li key={item}>{item}</li>)}</ul></Reveal>
       </section>
@@ -42,7 +42,7 @@ export default async function ProjectPage({ params }) {
 
       <Reveal className={styles.cover}>
         <figure className={project.caseCover ? styles.realCover : undefined}>
-          {project.caseCoverMobile ? <picture><source media="(max-width: 760px)" srcSet={project.caseCoverMobile} /><Image src={project.caseCover} alt={project.caseCoverAlt} fill sizes="(max-width: 760px) 100vw, 84vw" /></picture> : <Image src={project.cover} alt={`Concept artwork for ${project.title}`} fill sizes="(max-width: 760px) 100vw, 84vw" priority />}
+          {project.caseCoverMobile ? <picture><source media="(max-width: 760px)" srcSet={project.caseCoverMobile} /><Image src={project.caseCover} alt={project.caseCoverAlt} fill sizes="(max-width: 760px) 100vw, 84vw" /></picture> : <Image src={project.cover} alt={project.coverAlt ?? `Concept artwork for ${project.title}`} fill sizes="(max-width: 760px) 100vw, 84vw" priority />}
           <figcaption>{project.visualCaption}</figcaption>
         </figure>
       </Reveal>
