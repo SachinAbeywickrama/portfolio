@@ -4,7 +4,7 @@ import MotionVideo from "./MotionVideo";
 export default function StudioHero() {
   return <section className="studio-hero" id="home" aria-labelledby="intro-title">
     <figure className="hero-portrait">
-      <Image src="/media/sachin-motorbike-hero.jpg" alt="Sachin beside his motorbike outdoors" fill sizes="(max-width: 760px) 100vw, 34vw" quality={90} preload />
+      <Image src="/media/sachin-editorial-hero.png" alt="Portrait of Sachin in a forest-green shirt outdoors" fill sizes="(max-width: 760px) 100vw, 34vw" quality={90} preload />
       <figcaption className="hero-photo-note">Colombo, Sri Lanka <span aria-hidden="true">↗</span></figcaption>
     </figure>
     <div className="hero-identity">

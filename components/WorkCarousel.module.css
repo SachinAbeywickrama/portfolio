@@ -52,7 +52,7 @@
 /* The extended frame lets the cutout rise above the grid without covering project controls. */
 .portraitStage { position:absolute;inset:calc(-1*var(--portrait-rise)) 0 0;overflow:hidden; }
 .portraitMotion { position:absolute;inset:0;transition:transform .9s var(--ease-out); }
-.sideImage { object-fit:cover;object-position:center top;width:180%!important;max-width:none;height:140%!important;left:-40%!important;top:-12%!important; }
+.sideImage { object-fit:cover;object-position:center top;width:180%!important;max-width:none;height:126%!important;left:-40%!important;top:-2%!important; }
 .thumbnail:focus-visible,.controls button:focus-visible,.artwork:focus-visible { outline:2px solid var(--ink);outline-offset:-5px; }
 .projectLink:focus-visible { outline:2px solid var(--bg);outline-offset:2px; }
 .srOnly { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
