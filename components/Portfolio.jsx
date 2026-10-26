@@ -19,7 +19,7 @@ export default function Portfolio() {
     <StudioHero />
     <section className="intro-section page-shell" id="about" aria-labelledby="about-title">
       <Reveal><div className="section-title"><span>the</span><h2 id="about-title">developer.</h2></div></Reveal>
-      <DeveloperFeature><Reveal className="intro-copy"><p>I’m Sachin, a software engineer based in Colombo, Sri Lanka. My work brings together web applications, enterprise systems, and machine learning. From internal applications at SDB Bank to water-quality research with AquaAdapt, I like understanding how things fit together—and building something useful from that understanding.</p><a className="roll-link" href="/about"><span className="roll-label"><span>Learn more</span><span aria-hidden="true">Learn more</span></span></a></Reveal></DeveloperFeature>
+      <DeveloperFeature><Reveal className="intro-copy"><p>I’m Sachin, a software engineer based in Colombo, Sri Lanka. My work brings together web applications, enterprise systems, and machine learning. From internal applications at SDB Bank to water-quality research with AquaAdapt, I like understanding how things fit together-and building something useful from that understanding.</p><a className="roll-link" href="/about"><span className="roll-label"><span>Learn more</span><span aria-hidden="true">Learn more</span></span></a></Reveal></DeveloperFeature>
     </section>
     <section className="selected-section" id="work" aria-labelledby="work-title"><div className="page-shell"><Reveal><div className="section-title"><span>selected</span><h2 id="work-title">works.</h2></div></Reveal><WorkCarousel items={projects.map(project => ({ ...project, href: `/work/${project.slug}` }))} /></div></section>
     <WorkMarquee />
