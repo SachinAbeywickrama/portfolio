@@ -31,7 +31,7 @@ export default function AboutPage() {
       <section className={styles.hero} aria-labelledby="about-title">
         <div className={styles.heroTitle}><span>the</span><h1 id="about-title">developer.</h1></div>
         <Reveal className={styles.heroImage}>
-          <Image src="/media/sachin-about-portrait.jpg" alt="Sachin Abeywickrama outdoors, looking to the right" fill sizes="(max-width: 760px) 100vw, 34vw" priority />
+          <Image src="/media/sachin-about-formal.jpg" alt="Sachin Abeywickrama in a dark suit, looking to the left" fill sizes="(max-width: 760px) 100vw, 34vw" priority />
           <span>Colombo / Sri Lanka</span>
         </Reveal>
       </section>

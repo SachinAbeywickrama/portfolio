@@ -3,7 +3,8 @@
 .heroTitle>span,.eyebrow { margin:0 0 24px;font:10px/1.5 var(--mono);letter-spacing:.18em;text-transform:uppercase; }
 .heroTitle h1 { width:150%;margin:0;font-size:clamp(110px,18.8vw,290px);font-weight:700;line-height:.76;letter-spacing:-.1em;white-space:nowrap;animation:about-title-in 1s var(--ease-out) both; }
 .heroImage { position:relative;min-width:0;border-left:1px solid var(--line);overflow:hidden;background:var(--surface); }
-.heroImage img { object-fit:cover;object-position:57% center;filter:saturate(.64) contrast(1.08) brightness(.72);transition:transform 1.1s var(--ease-out),filter .7s; }
+.heroImage img { object-fit:cover;object-position:42% center;filter:saturate(.72) contrast(1.04) brightness(.92);transition:transform 1.1s var(--ease-out),filter .7s; }
+.heroImage::after { content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,var(--bg),color-mix(in srgb,var(--bg) 60%,transparent) 20%,transparent 44%);pointer-events:none; }
 .heroImage>span { position:absolute;z-index:2;right:14px;bottom:14px;padding:7px 9px;background:#111a17c7;color:#f2f0e8;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase; }
 .shell { width:83.333333%;margin-inline:auto;border-inline:1px solid var(--line); }
 .story { display:grid;grid-template-columns:5fr 7fr;border-bottom:1px solid var(--line); }
@@ -46,7 +47,7 @@
 .experienceRow p strong { color:var(--ink);font-weight:400;text-decoration:underline;text-underline-offset:3px; }
 .experienceRow p i { font-style:normal;opacity:.5; }
 @media(hover:hover) and (pointer:fine) {
- .heroImage:hover img { transform:scale(1.035);filter:saturate(.82) contrast(1.05) brightness(.8); }
+ .heroImage:hover img { transform:scale(1.035);filter:saturate(.84) contrast(1.04) brightness(.96); }
  .storyFigure:hover img { transform:scale(1.045) translateY(-.5%);filter:saturate(1) contrast(1.03) brightness(.94); }
 }
 @keyframes about-title-in { from { opacity:0;transform:translateY(36px); } to { opacity:1;transform:translateY(0); } }
@@ -69,7 +70,8 @@
  .heroTitle>span { margin-bottom:18px; }
  .heroTitle h1 { width:auto;font-size:22.5vw;line-height:.82; }
  .heroImage { height:82vw;max-height:460px;border-left:0;border-top:1px solid var(--line); }
- .heroImage img { object-position:55% 35%; }
+ .heroImage img { object-position:center top; }
+ .heroImage::after { display:none; }
  .shell { width:100%;border-inline:1px solid var(--line); }
  .storyAside { padding:34px 12px 12px; }
  .storyAside h2,.toolkit h2 { font-size:48px; }
